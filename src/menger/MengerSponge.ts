@@ -40,7 +40,7 @@ export class MengerSponge implements IMengerSponge {
   /* Returns a flat Float32Array of the sponge's vertex positions */
   public positionsFlat(): Float32Array {
 	  // TODO: right now this makes a single triangle. Make the cube fractal instead.
-	  return new Float32Array([1.0, 0.0, 0.0, 1.0, -1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0]);
+	  return new Float32Array([1.0, 0.0, 0.0, 1.0, -1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, -1.0, 0.0, 1.0]);
   }
 
   /**
@@ -48,7 +48,7 @@ export class MengerSponge implements IMengerSponge {
    */
   public indicesFlat(): Uint32Array {
     // TODO: right now this makes a single triangle. Make the cube fractal instead.
-    return new Uint32Array([0, 1, 2]);
+    return new Uint32Array([0, 1, 2, 3]);
   }
 
   /**
@@ -56,7 +56,7 @@ export class MengerSponge implements IMengerSponge {
    */
   public normalsFlat(): Float32Array {
 	  // TODO: right now this makes a single triangle. Make the cube fractal instead.
-	  return new Float32Array([0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0]);
+	  return new Float32Array([0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0]);
   }
 
   /**
