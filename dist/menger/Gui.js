@@ -66,6 +66,23 @@ export class GUI {
      */
     drag(mouse) {
         // TODO: Your code here for left and right mouse drag
+        if (this.dragging) {
+            const projMatrixI = this.camera.projMatrix().toInverseMat3();
+            const mouse_direction = new Vec3([this.prevX - mouse.screenX, this.prevY - mouse.screenY, 0]);
+            const w_mouse_dir = projMatrixI.multiplyVec3(mouse_direction);
+            const axis = Vec3.cross(this.camera.forward(), w_mouse_dir);
+            this.camera.rotate(axis, 10, this.camera.target());
+            console.log("here");
+        }
+        console.log("here1");
+        // //this.camera.rotate(camera.target())
+        // //const viewMatrixI : Mat3 = this.camera.viewMatrix().toInverseMat3();
+        // const projMatrixI : Mat3 = this.camera.projMatrix().toInverseMat3();
+        // const mouse_direction : Vec3 = new Vec3([this.prevX - mouse.screenX, this.prevY - mouse.screenY, 0])
+        // //const w_mouse_dir : Vec3 = projMatrixI.multiply(viewMatrix).multiplyVec3(mouse_direction);
+        // const axis : Vec3 = Vec3.cross(this.camera.forward(), w_mouse_dir);
+        // this.camera.rotate(axis, 2, this.camera.target());
+        // // TODO: Your code here for left and right mouse drag
     }
     /**
      * Callback function for the end of a drag event

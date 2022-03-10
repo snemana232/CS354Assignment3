@@ -1,5 +1,4 @@
 import { Mat3, Mat4, Vec3, Vec4 } from "../lib/TSM.js";
-
 /* A potential interface that students should implement */
 interface IMengerSponge {
   setLevel(level: number): void;
@@ -40,8 +39,14 @@ export class MengerSponge implements IMengerSponge {
   /* Returns a flat Float32Array of the sponge's vertex positions */
   public positionsFlat(): Float32Array {
 	  // TODO: right now this makes a single triangle. Make the cube fractal instead.
-    return new Float32Array([-1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, -1.0, 0.0, 1.0, -1.0, -1.0, 0.0, 1.0 ])
-
+    console.log("giving positiongs");
+    return new Float32Array([
+      -1.0, 1.0, 0.0, 1.0, //top right
+       1.0, 1.0, 0.0, 1.0, //top left
+       1.0, -1.0, 0.0, 1.0, //bottom left
+       -1.0, -1.0, 0.0, 1.0 //bottom right
+      ])
+      //it looks as though vertices must be in counter clockwise order.
 
     //return new Float32Array([1.0, 0.0, 0,0, 1.0, -1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, -1.0, 0.0, 1.0, -1.0, -1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0 ])
 	  //return new Float32Array([1.0, -1.0, 0.0, 1.0, -1.0, -1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, -1.0, 0.0, 1.0]);

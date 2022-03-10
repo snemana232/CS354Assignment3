@@ -22,7 +22,14 @@ export class MengerSponge {
     /* Returns a flat Float32Array of the sponge's vertex positions */
     positionsFlat() {
         // TODO: right now this makes a single triangle. Make the cube fractal instead.
-        return new Float32Array([-1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, -1.0, 0.0, 1.0, -1.0, -1.0, 0.0, 1.0]);
+        console.log("giving positiongs");
+        return new Float32Array([
+            -1.0, 1.0, 0.0, 1.0,
+            1.0, 1.0, 0.0, 1.0,
+            1.0, -1.0, 0.0, 1.0,
+            -1.0, -1.0, 0.0, 1.0 //bottom right
+        ]);
+        //it looks as though vertices must be in counter clockwise order.
         //return new Float32Array([1.0, 0.0, 0,0, 1.0, -1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, -1.0, 0.0, 1.0, -1.0, -1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0 ])
         //return new Float32Array([1.0, -1.0, 0.0, 1.0, -1.0, -1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, -1.0, 0.0, 1.0]);
     }
